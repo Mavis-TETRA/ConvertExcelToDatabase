@@ -1,0 +1,19 @@
+# File .gitignore
+
+# Bỏ qua tệp tạm thời
+*.tmp
+
+# Bỏ qua thư mục build
+/build
+
+# Bỏ qua file log
+*.log
+
+# Bỏ qua thư mục và nội dung trong đó
+image/
+
+# Bỏ qua tệp cụ thể
+mauTHHCM.xlsx
+config.ini
+serviceVidoExcel.rar
+

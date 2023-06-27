@@ -1,0 +1,52 @@
+﻿CREATE DATABASE STUDENT_MANAGEMENT
+
+GO
+USE STUDENT_MANAGEMENT;
+GO
+--DROP DATABASE STUDENT_MANAGEMENT
+--CREATE TABLES
+
+CREATE TABLE STUDENTS(
+	IDSerial int IDENTITY(1,1),
+    ID varchar(10) NOT NULL,
+	FirstName NVARCHAR(50) NOT NULL,
+	LastName NVARCHAR(30) NOT NULL,
+	Gender Varchar(5) NOT NULL,
+	DateB Varchar(20) NOT NULL,
+	MonthB Varchar(20) NOT NULL,
+	YearB Varchar(20) NOT NULL,
+	Birthplace nvarchar(100) NOT NULL,
+	Nationality Nvarchar(20) NOT NULL,
+	CitizenId Varchar(20) NOT NULL ,
+	ProvinceId Varchar(5) NOT NULL,
+	SchoolId Varchar(5) NOT NULL,
+	ClassName Nvarchar(20) NOT NULL,
+	Phone varchar(20) NOT NULL,
+	Email varchar(50) NOT NULL,
+	Address NVARCHAR(MAX) NOT NULL,
+	AdExamResults Varchar(5) NULL,
+	HSEdu Varchar(5) NULL,
+	ContinuingEdu Varchar(5) NULL,
+	Status Varchar(10) NOT NULL,
+	CreateAt Smalldatetime Not NULL,
+	UpdateAt Smalldatetime Not NULL
+); 
+GO
+
+
+--Khóa chính
+
+ALTER TABLE STUDENTS
+ADD CONSTRAINT PK_STUDENTS_CitizenId PRIMARY KEY (CitizenId);
+
+--ALTER TABLE STUDENTS
+--ADD CONSTRAINT PK_STUDENTS_ID PRIMARY KEY (ID);
+
+--Khóa phụ
+
+ALTER TABLE STUDENTS
+ADD CONSTRAINT FK_PHANCONG_MaDA FOREIGN KEY (MaDA) REFERENCES DEAN(MaDA);
+
+
+--DROP TABLE STUDENTS
+--DELETE FROM STUDENTS;
